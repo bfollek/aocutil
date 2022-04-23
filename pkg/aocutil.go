@@ -10,9 +10,8 @@ import (
 	"strings"
 )
 
-// MustFileToString loads a text file into a string.
-// All lines in the file become one big string.
-func MustFileToString(fileName string) (string, error) {
+// MustFileToOneString loads all lines in a text file into one string.
+func MustFileToOneString(fileName string) (string, error) {
 	absPath, err := filepath.Abs(fileName)
 	if err != nil {
 		log.Panic(err)
@@ -26,8 +25,8 @@ func MustFileToString(fileName string) (string, error) {
 	return strings.TrimSpace(s), nil
 }
 
-// MustFileToStringSlice reads a text file into a string slice.
-func MustFileToStringSlice(fileName string) []string {
+// MustFileToStrings reads a text file into a string slice.
+func MustFileToStrings(fileName string) []string {
 	absPath, err := filepath.Abs(fileName)
 	if err != nil {
 		log.Panic(err)
@@ -50,10 +49,10 @@ func MustFileToStringSlice(fileName string) []string {
 	return lines
 }
 
-// MustFileToIntSlice reads a text file into an int slice.
+// MustFileToInts reads a text file into an int slice.
 func MustFileToIntSlice(fileName string) []int {
 	is := []int{}
-	ss := MustFileToStringSlice(fileName)
+	ss := MustFileToStrings(fileName)
 	for _, s := range ss {
 		is = append(is, MustAtoi(s))
 	}

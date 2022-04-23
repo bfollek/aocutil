@@ -50,7 +50,7 @@ func MustFileToStrings(fileName string) []string {
 }
 
 // MustFileToInts reads a text file into an int slice.
-func MustFileToIntSlice(fileName string) []int {
+func MustFileToInts(fileName string) []int {
 	is := []int{}
 	ss := MustFileToStrings(fileName)
 	for _, s := range ss {

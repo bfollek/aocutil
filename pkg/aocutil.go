@@ -59,11 +59,20 @@ func MustFileToInts(fileName string) []int {
 	return is
 }
 
-// MustAtoi converts a string to an integer.
+// MustAtoi wraps `strconv.Atoi` and panics on error.
 func MustAtoi(s string) int {
 	i, err := strconv.Atoi(strings.TrimSpace(s))
 	if err != nil {
 		log.Panic(err)
 	}
 	return i
+}
+
+// MustAtoi wraps `strconv.ParseInt` and panics on error.
+func MustParseInt(s string, base int, bitSize int) (int64, error) {
+	i, err := strconv.ParseInt(s, base, bitSize)
+	if err != nil {
+		log.Panic(err)
+	}
+	return i, nil
 }

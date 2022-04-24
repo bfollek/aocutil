@@ -69,10 +69,10 @@ func MustAtoi(s string) int {
 }
 
 // MustAtoi wraps `strconv.ParseInt` and panics on error.
-func MustParseInt(s string, base int, bitSize int) (int64, error) {
+func MustParseInt(s string, base int, bitSize int) int64 {
 	i, err := strconv.ParseInt(s, base, bitSize)
 	if err != nil {
 		log.Panic(err)
 	}
-	return i, nil
+	return i
 }

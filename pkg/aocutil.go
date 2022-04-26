@@ -2,15 +2,36 @@ package aocutil
 
 import (
 	"bufio"
+	"fmt"
 	"io/ioutil"
 	"log"
+	"math"
 	"os"
 	"path/filepath"
 	"strconv"
 	"strings"
 )
 
-// MustFileToOneString loads all lines in a text file into one string.
+// MustBitSliceToInt converts `bits`,  an int slice of 0's and 1's, to an integer
+// value. It treats each `bits` element as a bit, e.g. [0,1,1,0] => 6. It panics
+// if any `bits` element is neither 0 nor 1.
+func MustBitSliceToInt(bits []int) int {
+	sum := float64(0)
+	j := float64(0)
+	for i := len(bits) - 1; i >= 0; i-- {
+		switch bits[i] {
+		case 0:
+		case 1:
+			sum += math.Pow(2, j)
+		default:
+			panic(fmt.Sprintf("Found %d at index %d in %v. Should be 0 or 1\n", bits[i], i, bits))
+		}
+		j++
+	}
+	return int(sum)
+}
+
+// MustFileToOneString loads all lines in a text file into one string and panics on error.
 func MustFileToOneString(fileName string) (string, error) {
 	absPath, err := filepath.Abs(fileName)
 	if err != nil {
@@ -25,7 +46,7 @@ func MustFileToOneString(fileName string) (string, error) {
 	return strings.TrimSpace(s), nil
 }
 
-// MustFileToStrings reads a text file into a string slice.
+// MustFileToStrings reads a text file into a string slice and panics on error.
 func MustFileToStrings(fileName string) []string {
 	absPath, err := filepath.Abs(fileName)
 	if err != nil {

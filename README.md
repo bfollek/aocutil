@@ -4,12 +4,13 @@ golang utilities for Advent of Code.
 
 ## Installation
 
-`go get github.com/bfollek/aocutil`
+`go get github.com/bfollek/aocutil@latest`
 
 ## Notes
 
-* compile: `go build pkg/aocutil.go`
+* Test: `go test ./... -count=1 -v`
+* Compile: `go build pkg/aocutil.go`
 
 ### To Do
 
-* Tests!
+* More tests

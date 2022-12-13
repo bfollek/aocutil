@@ -3,7 +3,6 @@ package aocutil
 import (
 	"bufio"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"math"
 	"os"
@@ -37,7 +36,7 @@ func MustFileToOneString(fileName string) (string, error) {
 	if err != nil {
 		log.Panic(err)
 	}
-	bytes, err := ioutil.ReadFile(absPath)
+	bytes, err := os.ReadFile(absPath)
 	if err != nil {
 		log.Panic(err)
 	}

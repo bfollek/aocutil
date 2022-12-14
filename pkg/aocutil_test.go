@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-const TEST_FILE = "../testdata/file.txt"
+const testFile = "../testdata/file.txt"
 
 func TestMustBitSliceToInt(t *testing.T) {
 	require := require.New(t)
@@ -17,7 +17,7 @@ func TestMustBitSliceToInt(t *testing.T) {
 
 func TestMustFileToStrings(t *testing.T) {
 	require := require.New(t)
-	ss := MustFileToStrings(TEST_FILE)
+	ss := MustFileToStrings(testFile)
 	require.Equal(3, len(ss))
 	require.Equal(ss[0], "111")
 	require.Equal(ss[2], "33333")
@@ -25,14 +25,14 @@ func TestMustFileToStrings(t *testing.T) {
 
 func TestMustFileToOneString(t *testing.T) {
 	require := require.New(t)
-	s, err := MustFileToOneString(TEST_FILE)
+	s, err := MustFileToOneString(testFile)
 	require.Nil(err)
 	require.Equal(s, "111\n2222\n33333")
 }
 
 func TestMustFileToInts(t *testing.T) {
 	require := require.New(t)
-	ii := MustFileToInts(TEST_FILE)
+	ii := MustFileToInts(testFile)
 	require.Equal(3, len(ii))
 	require.Equal(ii[0], 111)
 	require.Equal(ii[2], 33333)

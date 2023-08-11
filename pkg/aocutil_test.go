@@ -37,3 +37,10 @@ func TestMustFileToInts(t *testing.T) {
 	require.Equal(ii[0], 111)
 	require.Equal(ii[2], 33333)
 }
+
+func TestSortStringInPlace(t *testing.T) {
+	require := require.New(t)
+	st := "f2HacbJELfls88"
+	x := SortStringInPlace(st)
+	require.Equal(x, "288EHJLabcffls")
+}

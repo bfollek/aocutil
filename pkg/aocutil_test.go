@@ -42,5 +42,5 @@ func TestSortStringInPlace(t *testing.T) {
 	require := require.New(t)
 	st := "f2HacbJELfls88"
 	x := SortStringInPlace(st)
-	require.Equal(x, "288EHJLabcffls")
+	require.Equal(st, "288EHJLabcffls")
 }

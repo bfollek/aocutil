@@ -98,11 +98,9 @@ func MustParseInt(s string, base int, bitSize int) int64 {
 	return i
 }
 
-func SortStringInPlace(st string) string {
+func SortString(s string) string {
 	// https://stackoverflow.com/questions/22688651/golang-how-to-sort-string-or-byte
-	s := []rune(st)
-	fmt.Printf("s before: %s\n", string(s))
-	sort.Slice(s, func(i int, j int) bool { return s[i] < s[j] })
-	fmt.Printf("s after: %s\n", string(s))
-	return string(s)
+	r := []rune(s)
+	sort.Slice(r, func(i int, j int) bool { return r[i] < r[j] })
+	return string(r)
 }

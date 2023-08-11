@@ -40,8 +40,9 @@ func TestMustFileToInts(t *testing.T) {
 
 func TestSortStringInPlace(t *testing.T) {
 	require := require.New(t)
-	st := "f2HacbJELfls88"
-	st = SortStringInPlace(st)
-	//SortStringInPlace(st)
-	require.Equal("288EHJLabcffls", st)
+	s := "f2HacbJELfls88"
+	s = SortString(s)
+	require.Equal("288EHJLabcffls", s)
+	s = SortString("X7m2ax9")
+	require.Equal("279Xamx", s)
 }

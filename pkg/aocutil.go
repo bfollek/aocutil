@@ -59,6 +59,14 @@ func MustFileToStrings(fileName string) []string {
 	defer file.Close()
 
 	lines := []string{}
+	/*
+	 * https://pkg.go.dev/bufio#ScanLines
+	 *
+	 * "NewScanner returns a new Scanner to read from r. The split function defaults to ScanLines."
+	 *
+	 * "ScanLines is a split function for a Scanner that returns each line of text, stripped of any
+	 * trailing end-of-line marker."
+	 */
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		line := scanner.Text()

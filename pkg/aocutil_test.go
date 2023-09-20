@@ -25,8 +25,7 @@ func TestMustFileToStrings(t *testing.T) {
 
 func TestMustFileToOneString(t *testing.T) {
 	require := require.New(t)
-	s, err := MustFileToOneString(testFile)
-	require.Nil(err)
+	s := MustFileToOneString(testFile)
 	require.Equal(s, "111\n2222\n33333")
 }
 

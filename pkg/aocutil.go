@@ -32,7 +32,7 @@ func MustBitSliceToInt(bits []int) int {
 }
 
 // MustFileToOneString loads all lines in a text file into one string and panics on error.
-func MustFileToOneString(fileName string) (string, error) {
+func MustFileToOneString(fileName string) string {
 	absPath, err := filepath.Abs(fileName)
 	if err != nil {
 		log.Panic(err)
@@ -43,7 +43,7 @@ func MustFileToOneString(fileName string) (string, error) {
 	}
 	s := string(bytes)
 	// Trim any leading/trailing whitespace.
-	return strings.TrimSpace(s), nil
+	return strings.TrimSpace(s)
 }
 
 // MustFileToStrings reads a text file into a string slice and panics on error.

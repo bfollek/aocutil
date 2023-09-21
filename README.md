@@ -13,4 +13,5 @@ golang utilities for Advent of Code.
 
 ### To Do
 
+* Link to docs
 * More tests

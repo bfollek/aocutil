@@ -101,7 +101,7 @@ func MustAtoi(s string) int {
 	return i
 }
 
-// MustAtoi wraps `strconv.ParseInt` and panics on error.
+// MustParseInt wraps `strconv.ParseInt` and panics on error.
 func MustParseInt(s string, base int, bitSize int) int64 {
 	i, err := strconv.ParseInt(s, base, bitSize)
 	if err != nil {
@@ -110,6 +110,7 @@ func MustParseInt(s string, base int, bitSize int) int64 {
 	return i
 }
 
+// SortString sorts the characters (runes) in a string.
 func SortString(s string) string {
 	// https://stackoverflow.com/questions/22688651/golang-how-to-sort-string-or-byte
 	r := []rune(s)

@@ -1,3 +1,7 @@
+// Package aocutil provides functions that are useful in [Advent of Code] puzzles.
+// Some of them, e.g. I/O functions, may be useful in other programs.
+//
+// [Advent of Code]: https://adventofcode.com/
 package aocutil
 
 import (

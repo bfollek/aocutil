@@ -6,6 +6,10 @@ golang utilities for Advent of Code.
 
 `go get github.com/bfollek/aocutil@latest`
 
+## Documentation
+
+https://pkg.go.dev/github.com/bfollek/aocutil/pkg
+
 ## Notes
 
 * Test: `go test ./... -count=1 -v`

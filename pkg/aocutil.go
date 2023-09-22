@@ -16,9 +16,9 @@ import (
 	"strings"
 )
 
-// MustBitSliceToInt converts `bits`,  an int slice of 0's and 1's, to an integer
-// value. It treats each `bits` element as a bit, e.g. [0,1,1,0] => 6. It panics
-// if any `bits` element is neither 0 nor 1.
+// MustBitSliceToInt converts bits,  an int slice of 0's and 1's, to an integer
+// value. It treats each bits element as a bit, e.g. [0,1,1,0] => 6. It panics
+// if any bits element is neither 0 nor 1.
 func MustBitSliceToInt(bits []int) int {
 	sum := float64(0)
 	j := float64(0)
@@ -82,10 +82,10 @@ func MustFileToStrings(fileName string) []string {
 	return lines
 }
 
-// MustFileToInts reads a text file into an int slice.
+// MustFileToInts reads a text file into an int slice and panics on error.
 func MustFileToInts(fileName string) []int {
 	is := []int{}
-	ss := MustFileToStrings(fileName)
+	ss := MustFileToStrings(fileName) // Panics on error.
 	for _, s := range ss {
 		is = append(is, MustAtoi(s))
 	}

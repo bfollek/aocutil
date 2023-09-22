@@ -92,7 +92,7 @@ func MustFileToInts(fileName string) []int {
 	return is
 }
 
-// MustAtoi wraps `strconv.Atoi` and panics on error.
+// MustAtoi wraps strconv.Atoi and panics on error.
 func MustAtoi(s string) int {
 	i, err := strconv.Atoi(strings.TrimSpace(s))
 	if err != nil {
@@ -101,7 +101,7 @@ func MustAtoi(s string) int {
 	return i
 }
 
-// MustParseInt wraps `strconv.ParseInt` and panics on error.
+// MustParseInt wraps strconv.ParseInt and panics on error.
 func MustParseInt(s string, base int, bitSize int) int64 {
 	i, err := strconv.ParseInt(s, base, bitSize)
 	if err != nil {
